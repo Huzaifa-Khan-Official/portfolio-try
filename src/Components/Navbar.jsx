@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link, Navigate } from 'react-router-dom'
 
 export default function Navbar({ children }) {
     return (
@@ -7,22 +8,20 @@ export default function Navbar({ children }) {
                 <a className="navbar-brand" href="#">Navbar</a>
                 <ul className="nav nav-pills">
                     <li className="nav-item">
-                        <a className="nav-link" href="#scrollspyHeading1">First</a>
+                        <a href="#first" className="nav-link" data-to-scrollspy-id="first">First</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#scrollspyHeading2">Second</a>
+                        <a href="#second" className="nav-link" data-to-scrollspy-id="second">Second</a>
                     </li>
-                    <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
-                        <ul className="dropdown-menu">
-                            <li><a className="dropdown-item" href="#scrollspyHeading3">Third</a></li>
-                            <li><a className="dropdown-item" href="#scrollspyHeading4">Fourth</a></li>
-                            <li><a className="dropdown-item" href="#scrollspyHeading5">Fifth</a></li>
-                        </ul>
+                    <li className="nav-item">
+                        <a href="#third" className="nav-link" data-to-scrollspy-id="third">Third</a>
+                    </li>
+                    <li className="nav-item">
+                        <a href="#fourth" className="nav-link" data-to-scrollspy-id="fourth">Fourth</a>
                     </li>
                 </ul>
             </nav>
-            
+
             {children}
         </div>
     )

@@ -3,3 +3,8 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.active-scroll-spy {
+  background-color: yellowgreen;
+  border-radius: 15px;
+}
