@@ -1,13 +1,19 @@
 import React from 'react'
+import { FaBars } from "react-icons/fa6";
+import navbarLogo from '../assets/navbarLogo.png'
 
 export default function Navbar({ children }) {
     return (
         <div>
             <nav className="navbar navbar-expand-md bg-body-tertiary sticky-top">
                 <div className="container-fluid">
-                    <a className="navbar-brand" href="#">Navbar</a>
+                    <a className="navbar-brand" href="#">
+                        <img src={navbarLogo} alt="" />
+                    </a>
                     <button className="navbarToggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
+                        <span className="togglerIcon">
+                            <FaBars />
+                        </span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
