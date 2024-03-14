@@ -4,7 +4,48 @@
   box-sizing: border-box;
 }
 
-.active-scroll-spy {
-  background-color: yellowgreen;
-  border-radius: 15px;
+.nav-link {
+  text-transform: uppercase;
+  color: black;
+  position: relative;
+}
+
+.nav-link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: black;
+  transition: width 0.3s ease;
+}
+
+.nav-item:hover .nav-link::before,
+.nav-link.active-scroll-spy::before {
+  width: 80%;
+}
+
+.nav-item:hover .nav-link,
+.nav-link.active-scroll-spy {
+  color: black !important;
+}
+
+.navbar .container-fluid {
+  padding: 0 80px;
+}
+
+.navbarToggler {
+  padding: 5px 10px;
+  background-color: transparent;
+  border: none;
+  font-size: larger;
+  color: ;
+}
+
+@media (max-width: 767px) {
+  .navbar .container-fluid {
+    padding: 0 30px;
+  }
 }
