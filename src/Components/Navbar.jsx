@@ -1,11 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaBars } from "react-icons/fa6";
 import navbarLogo from '../assets/navbarLogo.png'
 
 export default function Navbar({ children }) {
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const isScrolled = window.scrollY > 20;
+            if (isScrolled !== scrolled) {
+                setScrolled(isScrolled);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [scrolled]);
     return (
         <div>
-            <nav className="navbar navbar-expand-md bg-body-tertiary sticky-top">
+            <nav className={`navbar navbar-expand-md sticky-top ${scrolled ? 'bg-scroll' : 'bg-noScroll'}`}>
                 <div className="container-fluid">
                     <a className="navbar-brand" href="#">
                         <img src={navbarLogo} alt="" />
@@ -16,7 +32,7 @@ export default function Navbar({ children }) {
                         </span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <ul className="navbar-nav ms-auto mb-2 mb-lg-0 gap-3">
                             <li className="nav-item">
                                 <a href="#home" className="nav-link" data-to-scrollspy-id="home">
                                     home
@@ -53,19 +69,10 @@ export default function Navbar({ children }) {
                                     <span id='line'></span>
                                 </a>
                             </li>
-
                         </ul>
                     </div>
                 </div>
             </nav>
-
-
-
-
-
-
-
-
             {children}
         </div>
     )

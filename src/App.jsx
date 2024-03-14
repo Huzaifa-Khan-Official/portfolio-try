@@ -5,7 +5,7 @@ export default function App() {
   return (
     <div>
       <ScrollSpy>
-        <div id="home">
+        <div id="home" className="homeDiv">
           <h2>First Para</h2>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla, cumque, amet doloremque ab possimus libero excepturi inventore obcaecati accusantium animi debitis sint eligendi rem, dignissimos officiis aliquam minima! Necessitatibus, adipisci!
           Vel quae officia quam. Vero eum deserunt, soluta dolores odio dicta deleniti iure eveniet a adipisci facere! Dolores itaque, deleniti voluptates unde quam exercitationem, illum neque, doloremque nam nulla repellat!
